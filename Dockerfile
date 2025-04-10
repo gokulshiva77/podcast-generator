@@ -1,12 +1,11 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip
 
-RUN python3 -m venv /venv
-RUN /venv/bin/pip install pyyaml
+RUN pip3 install pyyaml
 
 COPY feed.py /usr/bin/feed.py
 
